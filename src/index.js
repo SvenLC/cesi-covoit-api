@@ -1,6 +1,14 @@
 import express from 'express';
 import { userRouter } from './user/user-router.js';
 
+import mongoose from 'mongoose';
+
+mongoose.connect('mongodb://localhost:27017/cesi-covoit');
+
+mongoose.connection.on('connected', () => {
+  console.log('Connected to mongodb');
+});
+
 const app = express();
 app.use(express.json());
 
