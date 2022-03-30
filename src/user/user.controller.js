@@ -4,6 +4,7 @@ export const getUsers = async (req, res, next) => {
   try {
     const result = await fetchUsers();
     res.status(200).json(result);
+
   } catch (error) {
     next(error);
   }
@@ -15,6 +16,7 @@ export const addUser = async (req, res, next) => {
   try {
     const addedUser = await createUser(body);
     res.status(200).json(addedUser);
+
   } catch (error) {
     next(error);
   }
